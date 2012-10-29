@@ -5,7 +5,7 @@ date: 2012-10-29 00:50
 comments: true
 categories: [Ruby, Rails, Rubinius]
 ---
-I recently started hacking around with Rubinius. Way cool stuff. I haven't been able to get Rails up and running under Rubinius yet, but the only area where I'm seeing issues so far is with Haml. I've managed to track down 2 encoding related bugs that are stopping Haml from renderding properly.
+I recently started hacking around with Rubinius. Way cool stuff. I haven't been able to get Rails up and running under Rubinius yet, but the only area where I'm seeing issues so far is with Haml. I've managed to track down 2 encoding related bugs that are stopping Haml from rendering properly.
 
 ### ascii_only?
 

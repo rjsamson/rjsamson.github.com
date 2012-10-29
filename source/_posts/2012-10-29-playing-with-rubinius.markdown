@@ -31,16 +31,16 @@ str2.ascii_only? # => false
 The second issue is in ranges not working properly to select substrings when a string contains non-ascii characters.
 
 ```ruby
-str = "a utf-8 string (\u20AC) with utf-8 chars"
-str2 = "A normal ASCII-ONLY String"
+str = "a utf-8 character (\u20AC) in a utf-8 string"
+str2 = "A normal ASCII-ONLY string"
 
 # In Rubinius
-str2[1...-1] # works correctly => "normal ASCII-ONLY Strin"
-str[1...-1] # doesn't strip the 's' => "utf-8 string (€) with utf-8 chars"
+str2[1...-1] # works correctly => " normal ASCII-ONLY strin"
+str[1...-1] # doesn't strip the 's' => " utf-8 character (€) in a utf-8 string"
 
 # In Ruby 1.9.3
-str2[1...-1] # works correctly => "normal ASCII-ONLY Strin"
-str[1...-1] # works correctly => "utf-8 string (€) with utf-8 char"
+str2[1...-1] # works correctly => " normal ASCII-ONLY Strin"
+str[1...-1] # works correctly => " utf-8 character (€) in a utf-8 strin"
 ```
 
 I'll open up a couple issues on GitHub and hopefully these can get fixed - I'm looking forward to being able to get a couple Rails projects up and running on Rubinius.

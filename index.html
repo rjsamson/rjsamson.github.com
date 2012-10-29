@@ -140,16 +140,16 @@
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">str</span> <span class="o">=</span> <span class="s2">&quot;a utf-8 string (\u20AC) with utf-8 chars&quot;</span>
-</span><span class='line'><span class="n">str2</span> <span class="o">=</span> <span class="s2">&quot;A normal ASCII-ONLY String&quot;</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">str</span> <span class="o">=</span> <span class="s2">&quot;a utf-8 character (\u20AC) in a utf-8 string&quot;</span>
+</span><span class='line'><span class="n">str2</span> <span class="o">=</span> <span class="s2">&quot;A normal ASCII-ONLY string&quot;</span>
 </span><span class='line'>
 </span><span class='line'><span class="c1"># In Rubinius</span>
-</span><span class='line'><span class="n">str2</span><span class="o">[</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">-</span><span class="mi">1</span><span class="o">]</span> <span class="c1"># works correctly =&gt; &quot;normal ASCII-ONLY Strin&quot;</span>
-</span><span class='line'><span class="n">str</span><span class="o">[</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">-</span><span class="mi">1</span><span class="o">]</span> <span class="c1"># doesn&#39;t strip the &#39;s&#39; =&gt; &quot;utf-8 string (€) with utf-8 chars&quot;</span>
+</span><span class='line'><span class="n">str2</span><span class="o">[</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">-</span><span class="mi">1</span><span class="o">]</span> <span class="c1"># works correctly =&gt; &quot; normal ASCII-ONLY strin&quot;</span>
+</span><span class='line'><span class="n">str</span><span class="o">[</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">-</span><span class="mi">1</span><span class="o">]</span> <span class="c1"># doesn&#39;t strip the &#39;s&#39; =&gt; &quot; utf-8 character (€) in a utf-8 string&quot;</span>
 </span><span class='line'>
 </span><span class='line'><span class="c1"># In Ruby 1.9.3</span>
-</span><span class='line'><span class="n">str2</span><span class="o">[</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">-</span><span class="mi">1</span><span class="o">]</span> <span class="c1"># works correctly =&gt; &quot;normal ASCII-ONLY Strin&quot;</span>
-</span><span class='line'><span class="n">str</span><span class="o">[</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">-</span><span class="mi">1</span><span class="o">]</span> <span class="c1"># works correctly =&gt; &quot;utf-8 string (€) with utf-8 char&quot;</span>
+</span><span class='line'><span class="n">str2</span><span class="o">[</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">-</span><span class="mi">1</span><span class="o">]</span> <span class="c1"># works correctly =&gt; &quot; normal ASCII-ONLY Strin&quot;</span>
+</span><span class='line'><span class="n">str</span><span class="o">[</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">-</span><span class="mi">1</span><span class="o">]</span> <span class="c1"># works correctly =&gt; &quot; utf-8 character (€) in a utf-8 strin&quot;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 

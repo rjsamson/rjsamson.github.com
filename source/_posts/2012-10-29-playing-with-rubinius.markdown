@@ -35,12 +35,12 @@ str = "a utf-8 string (\u20AC) with utf-8 chars"
 str2 = "A normal ASCII-ONLY String"
 
 # In Rubinius
-str2[1...-1] # => normal ASCII-ONLY String
-str[1...-1] # => utf-8 string (€) with utf-8 chars
+str2[1...-1] # works correctly => "normal ASCII-ONLY Strin"
+str[1...-1] # doesn't strip the 's' => "utf-8 string (€) with utf-8 chars"
 
 # In Ruby 1.9.3
-str2[1...-1] # => normal ASCII-ONLY String
-str[1...-1] # => utf-8 string (€) with utf-8 char
+str2[1...-1] # works correctly => "normal ASCII-ONLY Strin"
+str[1...-1] # works correctly => "utf-8 string (€) with utf-8 char"
 ```
 
 I'll open up a couple issues on GitHub and hopefully these can get fixed - I'm looking forward to being able to get a couple Rails projects up and running on Rubinius.

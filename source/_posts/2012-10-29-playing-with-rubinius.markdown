@@ -35,11 +35,11 @@ str = "a utf-8 string (\u20AC) with utf-8 chars"
 str2 = "A normal ASCII-ONLY String"
 
 # In Rubinius
-str2[1...-1] # => normal ASCII-ONLY Strin
+str2[1...-1] # => normal ASCII-ONLY String
 str[1...-1] # => utf-8 string (€) with utf-8 chars
 
 # In Ruby 1.9.3
-str2[1...-1] # => normal ASCII-ONLY Strin
+str2[1...-1] # => normal ASCII-ONLY String
 str[1...-1] # => utf-8 string (€) with utf-8 char
 ```
 

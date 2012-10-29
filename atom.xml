@@ -4,7 +4,7 @@
   <title><![CDATA[Stabby Lambdas]]></title>
   <link href="http://rjsamson.github.com/atom.xml" rel="self"/>
   <link href="http://rjsamson.github.com/"/>
-  <updated>2012-10-29T14:46:40-04:00</updated>
+  <updated>2012-10-29T14:50:38-04:00</updated>
   <id>http://rjsamson.github.com/</id>
   <author>
     <name><![CDATA[Robert J Samson]]></name>
@@ -69,7 +69,7 @@
 </span><span class='line'><span class="n">str2</span> <span class="o">=</span> <span class="s2">&quot;A normal ASCII-ONLY String&quot;</span>
 </span><span class='line'>
 </span><span class='line'><span class="c1"># In Rubinius</span>
-</span><span class='line'><span class="n">str2</span><span class="o">[</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">-</span><span class="mi">1</span><span class="o">]</span> <span class="c1"># =&gt; normal ASCII-ONLY Strin</span>
+</span><span class='line'><span class="n">str2</span><span class="o">[</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">-</span><span class="mi">1</span><span class="o">]</span> <span class="c1"># =&gt; normal ASCII-ONLY String</span>
 </span><span class='line'><span class="n">str</span><span class="o">[</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">-</span><span class="mi">1</span><span class="o">]</span> <span class="c1"># =&gt; utf-8 string (€) with utf-8 chars</span>
 </span><span class='line'>
 </span><span class='line'><span class="c1"># In Ruby 1.9.3</span>

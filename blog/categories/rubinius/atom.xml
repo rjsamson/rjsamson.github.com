@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Rubinius | Stabby Lambdas]]></title>
+  <link href="http://rjsamson.github.com/blog/categories/rubinius/atom.xml" rel="self"/>
+  <link href="http://rjsamson.github.com/"/>
+  <updated>2012-10-29T14:37:56-04:00</updated>
+  <id>http://rjsamson.github.com/</id>
+  <author>
+    <name><![CDATA[Robert J Samson]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Playing with Rubinius]]></title>
+    <link href="http://rjsamson.github.com/blog/2012/10/29/playing-with-rubinius/"/>
+    <updated>2012-10-29T00:50:00-04:00</updated>
+    <id>http://rjsamson.github.com/blog/2012/10/29/playing-with-rubinius</id>
+    <content type="html"><![CDATA[<p>I recently started hacking around with Rubinius. Way cool stuff. I haven't been able to get Rails up and running under Rubinius yet, but the only area where I'm seeing issues so far is with Haml. I've managed to track down 2 encoding related bugs that are stopping Haml from renderding properly.</p>
+
+<h3>ascii_only?</h3>
+
+<p>The first has to do with String#ascii_only? not working properly when a differently encoded string is embedded in another using string interpolation.</p>
+
+<p>```ruby
+str = "a utf-8 string (\u20AC) with utf-8 chars"
+str2 = "This string is #{str} but looks like ascii-only"</p>
+
+<h1>In Rubinius</h1>
+
+<p>str.ascii_only? # => false
+str2.encoding # => UTF-8
+str2.ascii_only? # => true</p>
+
+<h1>In Ruby 1.9.3</h1>
+
+<p>str.ascii_only? # => false
+str2.encoding # => UTF-8
+str2.ascii_only? # => false
+```</p>
+
+<h3>Non-Ascii Substring Ranges</h3>
+
+<p>The second issue is in ranges not working properly to select substrings when a string contains non-ascii characters.</p>
+
+<p>```ruby
+str = "a utf-8 string (\u20AC) with utf-8 chars"
+str2 = "A normal ASCII-ONLY String"</p>
+
+<h1>In Rubinius</h1>
+
+<p>str2[1...-1] # => normal ASCII-ONLY Strin
+str[1...-1] # => utf-8 string (€) with utf-8 chars</p>
+
+<h1>In Ruby 1.9.3</h1>
+
+<p>str2[1...-1] # => normal ASCII-ONLY Strin
+str[1...-1] # => utf-8 string (€) with utf-8 char
+```</p>
+
+<p>I'll open up a couple issues on GitHub and hopefully these can get fixed - I'm looking forward to being able to get a couple Rails projects up and running on Rubinius.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Rails | Stabby Lambdas]]></title>
   <link href="http://rjsamson.github.com/blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://rjsamson.github.com/"/>
-  <updated>2012-10-29T14:37:56-04:00</updated>
+  <updated>2012-10-29T14:46:40-04:00</updated>
   <id>http://rjsamson.github.com/</id>
   <author>
     <name><![CDATA[Robert J Samson]]></name>
@@ -18,7 +18,7 @@
     <link href="http://rjsamson.github.com/blog/2012/10/29/playing-with-rubinius/"/>
     <updated>2012-10-29T00:50:00-04:00</updated>
     <id>http://rjsamson.github.com/blog/2012/10/29/playing-with-rubinius</id>
-    <content type="html"><![CDATA[<p>I recently started hacking around with Rubinius. Way cool stuff. I haven't been able to get Rails up and running under Rubinius yet, but the only area where I'm seeing issues so far is with Haml. I've managed to track down 2 encoding related bugs that are stopping Haml from renderding properly.</p>
+    <content type="html"><![CDATA[<p>I recently started hacking around with Rubinius. Way cool stuff. I haven't been able to get Rails up and running under Rubinius yet, but the only area where I'm seeing issues so far is with Haml. I've managed to track down 2 encoding related bugs that are stopping Haml from rendering properly.</p>
 
 <h3>ascii_only?</h3>
 
